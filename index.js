@@ -11,7 +11,7 @@ app.use(json({ limit: '50mb' })); // Aumenta el límite para JSON
 app.use(urlencoded({ limit: '50mb', extended: true })); // Aumenta el límite para datos codificados
 
 // Configuración de CORS
-const allowedOrigins = ['https://front-notubeyet.vercel.app'];
+const allowedOrigins = ['https://videos-front1.vercel.app/'];
 app.use(cors({
     origin: (origin, callback) => {
         if (!origin || allowedOrigins.includes(origin)) {
@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 });
 
 // Utiliza las rutas del sistema
-app.use('/v1/tubeyet', router);
+app.use('/v1/yourvideos', router);
 
 // Iniciar el servidor
 const port = process.env.PORT || 4000;

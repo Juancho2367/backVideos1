@@ -1,11 +1,11 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
-const { registerUser, loginUsuario,uploadVideo,getVideos,getUserVideos } = require('./controllers/tubeyetControllers');
+const { registerUser, loginUsuario,uploadVideo,getVideos,getUserVideos } = require('./controllers/yourvideosControllers');
 const upload = require('../aws/upload'); // Importa tu configuración de Multer-S3
 const router = express.Router();
 
-dotenv.config({ path: './config.env' });
+dotenv.config({ path: '.env' });
 
 // Conectar a MongoDB
 mongoose.connect(process.env.MONGO_URI)
