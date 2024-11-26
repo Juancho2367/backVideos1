@@ -11,7 +11,7 @@ app.use(json({ limit: '50mb' })); // Aumenta el límite para JSON
 app.use(urlencoded({ limit: '50mb', extended: true })); // Aumenta el límite para datos codificados
 
 // Configuración de CORS
-const allowedOrigins = ['https://videos-front1.vercel.app/'];
+const allowedOrigins = ['https://videos-front1.vercel.app'];
 app.use(cors({
     origin: (origin, callback) => {
         if (!origin || allowedOrigins.includes(origin)) {
