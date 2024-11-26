@@ -13,17 +13,10 @@ app.use(urlencoded({ limit: '50mb', extended: true })); // Aumenta el límite pa
 // Configuración de CORS
 const allowedOrigins = ['https://videos-front1.vercel.app'];
 app.use(cors({
-    origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('No permitido por CORS'));
-        }
-    },
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
-}));
-
+    origin: "*", // Permite solicitudes desde cualquier origen
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+  }));
 // Manejador para la ruta raíz
 app.get('/', (req, res) => {
     res.send('Bienvenido al backend de yourvideos!');
